@@ -1,9 +1,9 @@
-# parking-lot´
+# cwi-parking-lot
 
-´´´sh
+```sh
 ionic platform add <so>
-´´´
+```
 
-´´´sh
+```sh
 ionic build android
-´´´
+```
