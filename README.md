@@ -5,7 +5,7 @@ Adicionar plataformas desejadas
 ionic platform add android
 ```
 
-Gerar ícone e splash screen
+Gerar resources de ícone e splash screen para as plataformas 
 ```sh
 ionic resources
 ```
