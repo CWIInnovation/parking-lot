@@ -1,9 +1,16 @@
 # cwi-parking-lot
 
+Buildar o icone e splash screen
 ```sh
-ionic platform add <so>
+ionic resources
 ```
 
+Adicionar plataformas
 ```sh
-ionic build android
+ionic platform add <plataforma>
+```
+
+Buildar
+```sh
+ionic build <plataforma>
 ```
