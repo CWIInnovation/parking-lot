@@ -18,15 +18,24 @@ angular.module('parking-lot', ['ionic'])
                 views: {
                     'home-tab': {
                         templateUrl: "templates/home.html",
-                        controller: 'HomeTabCtrl'
+                        controller: 'VehicleCtrl'
                     }
                 }
             })
-            .state('tabs.facts', {
-                url: "/facts/:id",
+            .state('tabs.about', {
+                url: "/about",
+                views: {
+                    'about-tab': {
+                        templateUrl: "templates/about.html",
+                    }
+                }
+            })
+            .state('tabs.details', {
+                url: "/details/:id",
                 views: {
                     'home-tab': {
-                        templateUrl: "templates/facts.html"
+                        templateUrl: "templates/details.html",
+                        controller: 'DetailCtrl'
                     }
                 }
             });
@@ -36,11 +45,7 @@ angular.module('parking-lot', ['ionic'])
 
     })
 
-    .controller('HomeTabCtrl', function ($scope) {
-        console.log('HomeTabCtrl');
-    })
-
-    .controller('vehicleController', function ($scope) {
+    .controller('VehicleCtrl', function ($scope) {
         $scope.sortType = 'name'; // set the default sort type
         $scope.vehicle = {};     // set the default search/filter term
 
@@ -54,7 +59,7 @@ angular.module('parking-lot', ['ionic'])
         ];
     })
 
-    .controller('detailController', function ($scope) {
+    .controller('DetailCtrl', function ($scope) {
         $scope.ownerInfo = {id: 1, name: 'Fulano Silva', image: 'foto1.jpg'};
     })
 
