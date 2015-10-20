@@ -1,6 +1,6 @@
 node_modules/
 platforms/
 plugins/
-resources/android
-resources/ios
+resources/android/
+resources/ios/
 
