@@ -17,5 +17,5 @@ ionic resources
 
 Buildar e rodar no celular ou emulador 
 ```sh
-ionic run <android|ios|>
+ionic run <android|ios>
 ```
