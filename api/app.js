@@ -1,13 +1,15 @@
 var port = process.env.port || 1337;
 
-var path = require('path');
-
 var express = require('express');
 var vehicle = require('./routes/vehicle');
 
 var app = express();
 
-app.use('/Veiculo', vehicle);
+app.use('/Vehicle', vehicle);
+
+app.get('/', function (req, res) {
+    res.json({routes: ['/Vehicle', '/Vehicle/{licensePlate}']});
+});
 
 app.listen(port);
 
