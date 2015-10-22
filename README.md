@@ -19,3 +19,5 @@ Buildar e rodar no celular ou emulador
 ```sh
 ionic run <android|ios>
 ```
+
+[API da aplicação](http://parkinglotapi.apphb.com/)
