@@ -32,7 +32,7 @@ angular.module('parking-lot', ['ionic', 'parking-lot.controllers'])
                 }
             })
             .state('app.details', {
-                url: "/details/:id",
+                url: "/details/:licensePlate",
                 views: {
                     'home-tab': {
                         templateUrl: "app/views/details.html",

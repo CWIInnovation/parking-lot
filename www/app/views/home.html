@@ -10,13 +10,12 @@
         </form>
 
         <div class="list padding">
-            <a class="item item-avatar" href="#/app/details/{{vehicle.owner.id}}"
+            <a class="item item-avatar" data-ui-sref="app.details({licensePlate: vehicle.licensePlate})"
                ng-repeat="vehicle in vehicles | orderBy:sortType:false | filter:vehicle">
-                <img src="image.jpg">
 
-                <h2>{{ vehicle.licensePlate }}</h2>
+                <h2><strong>{{ vehicle.licensePlate }}</strong> - {{ vehicle.vehicleType }}</h2>
 
-                <p>{{ vehicle.owner.name }}</p>
+                <p>{{ vehicle.driver }}</p>
             </a>
         </div>
     </ion-content>
