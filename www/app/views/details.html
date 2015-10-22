@@ -1,13 +1,39 @@
 <ion-view view-title="Detalhes">
-    <ion-content class="padding">
-        
-        <p>{{ownerInfo.licensePlate}}</p>        
+    <ion-content class="padding detalhes">
+        <div class="list card">
 
-        <p>{{ownerInfo.vehicleType}}</p>
-        
-        <p>{{ownerInfo.driver}}</p>
-        
-        <p>{{ownerInfo.team}}</p>
-                        
+            <div class="item item-avatar">
+                <img src="content/img/avatar.png">
+                <h2>{{ownerInfo.driver}}</h2>
+                <p>{{ownerInfo.licensePlate}}</p>
+            </div>
+
+            <div class="item item-body">
+                <div class="item item-icon-left">
+                    <i class="icon ion-model-s"></i>
+                    {{ownerInfo.vehicleType}}
+                </div>
+                <div class="item item-icon-left">
+                    <i class="icon ion-person-stalker"></i>
+                    {{ownerInfo.team}}
+                </div>
+                <div class="item item-icon-left">
+                    <i class="icon ion-ios-at"></i>
+                    name@cwi.com.br
+                </div>
+                <div class="item item-icon-left">
+                    <i class="icon ion-ios-telephone"></i>
+                    XXX
+                </div>
+            </div>
+
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item">
+                    <i class="icon ion-speakerphone"></i>
+                    Notificar
+                </a>
+            </div>
+
+        </div>
     </ion-content>
 </ion-view>

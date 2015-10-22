@@ -4,3 +4,9 @@
     margin-left: 10px;
     font-weight: bolder;
 }
+
+.detalhes .card .item-body .item {
+  border: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
