@@ -1,0 +1,23 @@
+<ion-view view-title="Início">
+    <ion-content>
+        <form>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="Informe a placa" ng-model="vehicle.licensePlate">
+                </label>
+            </div>
+        </form>
+
+        <div class="list padding">
+            <a class="item item-avatar" href="#/app/details/{{vehicle.owner.id}}"
+               ng-repeat="vehicle in vehicles | orderBy:sortType:false | filter:vehicle">
+                <img src="image.jpg">
+
+                <h2>{{ vehicle.licensePlate }}</h2>
+
+                <p>{{ vehicle.owner.name }}</p>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

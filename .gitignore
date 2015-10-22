@@ -3,4 +3,5 @@ platforms/
 plugins/
 resources/android/
 resources/ios/
+www/.idea/
 

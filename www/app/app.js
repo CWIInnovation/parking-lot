@@ -3,64 +3,47 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('parking-lot', ['ionic'])
+angular.module('parking-lot.controllers', []);
+angular.module('parking-lot', ['ionic', 'parking-lot.controllers'])
 
     .config(function ($stateProvider, $urlRouterProvider) {
 
         $stateProvider
-            .state('tabs', {
-                url: "/tab",
+            .state('app', {
+                url: "/app",
                 abstract: true,
-                templateUrl: "templates/tabs.html"
+                templateUrl: "app/views/tabs.html"
             })
-            .state('tabs.home', {
+            .state('app.home', {
                 url: "/home",
                 views: {
                     'home-tab': {
-                        templateUrl: "templates/home.html",
+                        templateUrl: "app/views/home.html",
                         controller: 'VehicleCtrl'
                     }
                 }
             })
-            .state('tabs.about', {
+            .state('app.about', {
                 url: "/about",
                 views: {
                     'about-tab': {
-                        templateUrl: "templates/about.html",
+                        templateUrl: "app/views/about.html",
                     }
                 }
             })
-            .state('tabs.details', {
+            .state('app.details', {
                 url: "/details/:id",
                 views: {
                     'home-tab': {
-                        templateUrl: "templates/details.html",
+                        templateUrl: "app/views/details.html",
                         controller: 'DetailCtrl'
                     }
                 }
             });
 
 
-        $urlRouterProvider.otherwise("/tab/home");
+        $urlRouterProvider.otherwise("/app/home");
 
-    })
-
-    .controller('VehicleCtrl', function ($scope) {
-        $scope.sortType = 'name'; // set the default sort type
-        $scope.vehicle = {};     // set the default search/filter term
-
-        // create the list of vehicles
-        $scope.vehicles = [
-            {licensePlate: 'GBR-3927', owner: {id: 1, name: 'Fulano Silva', image: 'foto1.jpg'}},
-            {licensePlate: 'VJY-4852', owner: {id: 2, name: 'Ciclano Santos', image: 'foto2.jpg'}},
-            {licensePlate: 'LXI-6234', owner: {id: 3, name: 'Rodolfo Luiz', image: 'foto3.jpg'}},
-            {licensePlate: 'UTG-1463', owner: {id: 4, name: 'Mariana Almeida', image: 'foto4.jpg'}},
-            {licensePlate: 'FFZ-8542', owner: {id: 5, name: 'Roberta Fonseca', image: 'foto5.jpg'}},
-        ];
-    })
-
-    .controller('DetailCtrl', function ($scope) {
-        $scope.ownerInfo = {id: 1, name: 'Fulano Silva', image: 'foto1.jpg'};
     })
 
     .run(function ($ionicPlatform) {
