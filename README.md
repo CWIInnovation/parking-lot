@@ -2,7 +2,7 @@
 
 Baixar os plugins utilizados pelo ionic (ex: splash screen) e demais dependências
 ```sh
-npm install
+ionic state restore
 ```
 
 Adicionar plataformas desejadas
