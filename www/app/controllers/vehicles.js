@@ -1,4 +1,4 @@
-angular.module('parking-lot.controllers').controller('VehicleCtrl', function ($scope) {
+angular.module('parking-lot').controller('VehicleCtrl', function ($scope) {
     $scope.sortType = 'licensePlate'; // set the default sort type
     $scope.vehicle = {};     // set the default search/filter term
 
