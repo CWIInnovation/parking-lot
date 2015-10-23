@@ -10,3 +10,15 @@
   padding-top: 8px;
   padding-bottom: 8px;
 }
+
+.license-plate{
+	font-family: arial;
+    background-color: silver;
+    width: 86px;
+    padding: 7px;
+    border: 2px solid rgb(90, 87, 87);
+    /* border-top: 8px; */
+    border-radius: 6px;
+    float: left;
+    text-align: center;
+}

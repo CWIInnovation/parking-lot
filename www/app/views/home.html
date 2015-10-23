@@ -9,14 +9,20 @@
             </div>
         </form>
 
-        <div class="list padding">
-            <a class="item item-avatar" data-ui-sref="app.details({licensePlate: vehicle.licensePlate})"
+        <div class="list padding"> 
+            <a class="item" data-ui-sref="app.details({licensePlate: vehicle.licensePlate})"
                ng-repeat="vehicle in vehicles | orderBy:sortType:false | filter:vehicle">
-
-                <h2><strong>{{ vehicle.licensePlate }}</strong> - {{ vehicle.vehicleType }}</h2>
-
-                <p>{{ vehicle.driver }}</p>
+                <div>
+                    <div class="license-plate">{{ vehicle.licensePlate }}</div>
+                </div>
+                <div style="margin-left: 100px;">
+                    <h2>{{ vehicle.vehicleType }}</h2>
+                    <p>{{ vehicle.driver }}</p>
+                </div>
+                
             </a>
         </div>
+
+        
     </ion-content>
 </ion-view>
