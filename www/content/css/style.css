@@ -11,14 +11,43 @@
   padding-bottom: 8px;
 }
 
-.license-plate{
+.license-plate {
 	font-family: arial;
     background-color: silver;
     width: 86px;
-    padding: 7px;
-    border: 2px solid rgb(90, 87, 87);
-    /* border-top: 8px; */
+    padding: 4px 7px 1px 7px;
+    border: 2px solid rgb(137, 135, 135);
+    font-weight: bold;
     border-radius: 6px;
     float: left;
     text-align: center;
+}
+
+.license-plate div {
+    border: 1px solid rgb(168, 168, 168);
+    width: 68px;
+    height: 8px;
+    margin-bottom: 1px;
+}
+
+.license-plate div span {
+    position: absolute;    
+    top: 17px;
+    left: 26px;
+    font-size: 0.4em;
+}
+
+.about-container p {
+    padding-left: 10px;
+    padding-right: 15px;
+    text-align: justify;   
+}
+
+.about-container h4 {
+    text-align: center;
+    margin: 30px 10px 30px 20px!important;
+}
+
+.about-container i {
+    color: red;
 }

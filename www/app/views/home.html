@@ -4,7 +4,7 @@
             <div class="list list-inset">
                 <label class="item item-input">
                     <i class="icon ion-search placeholder-icon"></i>
-                    <input type="text" placeholder="Informe a placa" ng-model="vehicle.licensePlate">
+                    <input type="text" placeholder="Informe a placa" ng-model-options="{ debounce: { 'default': 400 } }" ng-model="vehicle.licensePlate">
                 </label>
             </div>
         </form>
@@ -13,16 +13,14 @@
             <a class="item" data-ui-sref="app.details({licensePlate: vehicle.licensePlate})"
                ng-repeat="vehicle in vehicles | orderBy:sortType:false | filter:vehicle">
                 <div>
-                    <div class="license-plate">{{ vehicle.licensePlate }}</div>
+                    <div class="license-plate"><div><span>CWI Software - RS<span></div>{{::vehicle.licensePlate }}</div>
                 </div>
                 <div style="margin-left: 100px;">
-                    <h2>{{ vehicle.vehicleType }}</h2>
-                    <p>{{ vehicle.driver }}</p>
-                </div>
-                
+                    <h2>{{::vehicle.vehicleType }}</h2>
+                    <p>{{::vehicle.driver }}</p>
+                </div>                
             </a>
         </div>
-
         
     </ion-content>
 </ion-view>
