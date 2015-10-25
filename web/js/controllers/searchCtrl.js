@@ -1,31 +1,11 @@
-angular.module("cwiCarros").controller("searchCtrl", function ($scope) {
+angular.module("parkingLotWeb").controller("searchCtrl", function ($scope, vehiclesService) {
 	
-	var cadastro1 = {
-		plate: 'IUR6888',
-		name: 'Robson Luiz Valim de Bitttencourt',
-		car: 'Ônix',
-		phoneExtension: '633',
-		cellphone: '81442804',
-		project: 'Renner',
-		floor: '4'
-	};
+	$scope.registers = vehiclesService.getVehicles();
 
-	var cadastro2 = {
-		plate: 'IMK7971',
-		name: 'João da Silva Sauro',
-		car: 'Gol',
-		phoneExtension: '458',
-		cellphone: '98564758',
-		project: 'Sicredi',
-		floor: '3'
-	};
-
-	$scope.registers = [cadastro1, cadastro2];
-
-	$scope.searchRegister = function (plate, registers) {
-		if (plate.length == 7) {
+	$scope.searchRegister = function (licensePlate, registers) {
+		if (licensePlate.length == 7) {
 			var result = registers.filter(function (register) {
-				if(register.plate.toUpperCase() === plate.toUpperCase()) return register;
+				if(register.licensePlate.toUpperCase().replace(/ /g, '') === licensePlate.toUpperCase()) return register;
 			});
 
 			if (result.length > 0) {
