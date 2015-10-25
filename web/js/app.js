@@ -1,1 +1,1 @@
-angular.module("cwiCarros", []);
+angular.module("parkingLotWeb", []);

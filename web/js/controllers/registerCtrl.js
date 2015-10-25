@@ -1,4 +1,4 @@
-angular.module("cwiCarros").controller("registerCtrl", function ($scope) {
+angular.module("parkingLotWeb").controller("registerCtrl", function ($scope) {
 	
 	$scope.save = function (register) {
 		console.log(register);

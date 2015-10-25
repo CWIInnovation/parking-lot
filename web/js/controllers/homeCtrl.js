@@ -1,4 +1,4 @@
-angular.module("cwiCarros").controller("homeCtrl", function ($scope) {
+angular.module("parkingLotWeb").controller("homeCtrl", function ($scope) {
 	
 	$scope.selectedTab = 10;
 
