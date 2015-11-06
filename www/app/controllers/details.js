@@ -1,8 +1,9 @@
 angular.module('parking-lot').controller('DetailCtrl', ["$scope","$stateParams", "vehiclesService", function ($scope, $stateParams, $vehiclesService) {
-    var veiculos = $vehiclesService.getVehicles();
+    $vehiclesService.getVehiclesDatabase().then(function (vehicles) {
+		vehicles.forEach(function (vehicle) {
+        if (vehicle.licensePlate == $stateParams.licensePlate)
+            $scope.ownerInfo = vehicle;
+		});
+	});
 
-    veiculos.forEach(function (veiculo) {
-        if (veiculo.licensePlate == $stateParams.licensePlate)
-            $scope.ownerInfo = veiculo;
-    });
 }]);

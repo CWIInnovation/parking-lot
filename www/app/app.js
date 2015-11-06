@@ -5,7 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('parking-lot', ['ionic'])
 
-    .config(function ($stateProvider, $urlRouterProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
         $stateProvider
             .state('app', {
@@ -43,6 +45,18 @@ angular.module('parking-lot', ['ionic'])
 
         $urlRouterProvider.otherwise("/app/home");
 
+    })
+
+    .constant('config', {
+        appName: 'parking-lot',
+        appVersion: 1.0,
+        apiUrl: 'http://parkingservice-1.apphb.com/',
+        headers: {
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
     })
 
     .run(function ($ionicPlatform) {
