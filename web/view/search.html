@@ -1,0 +1,85 @@
+<div ng-controller="searchCtrl" class="container-fluid" style="text-align: center;">	
+	<div class="col-md-12">
+		<div class="col-md-6">	
+			<div class="row">
+		        <h1 style="margin-top: 0px;">Digite a placa</h1>	
+		        <input ng-model="plate" ng-change="searchRegister(plate, registers)" type="text" class="span9 text-uppercase"/>
+			</div>
+		</div>	
+
+		<div class="col-md-6">	
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel panel-primary fixed-panel">
+						<div class="panel-heading">
+							<h3 class="panel-title">Nome</h3>
+					    </div>
+					    <div class="panel-body text-uppercase">
+					    	{{register.driver}}
+					    </div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+			    	<div class="panel panel-success fixed-panel">
+						<div class="panel-heading">
+							<h3 class="panel-title">Carro</h3>
+					    </div>
+					    <div class="panel-body text-uppercase">
+					    	{{register.vehicleType}}
+					    </div>
+					</div>
+					
+					<div class="panel panel-info fixed-panel">
+						<div class="panel-heading">
+							<h3 class="panel-title">Ramal</h3>
+					    </div>
+					    <div class="panel-body">
+					    	{{register.phoneExtension}}
+					    </div>
+					</div>
+
+					<div class="panel panel-warning fixed-panel">
+						<div class="panel-heading">
+							<h3 class="panel-title">Projeto</h3>
+					    </div>
+					    <div class="panel-body text-uppercase">
+					    	{{register.team}}
+					    </div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="panel panel-success fixed-panel">
+						<div class="panel-heading">
+							<h3 class="panel-title">Placa</h3>
+					    </div>
+					    <div class="panel-body text-uppercase">
+					    	{{register.licensePlate}}
+					    </div>
+					</div>
+					
+					<div class="panel panel-info fixed-panel">
+						<div class="panel-heading">
+							<h3 class="panel-title">Celular</h3>
+					    </div>
+					    <div class="panel-body">
+					    	{{register.cellphone}}
+					    </div>
+					</div>
+
+					<div class="panel panel-warning fixed-panel">
+						<div class="panel-heading">
+							<h3 class="panel-title">Andar</h3>
+					    </div>
+					    <div class="panel-body">
+					    	{{register.floor}}
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>

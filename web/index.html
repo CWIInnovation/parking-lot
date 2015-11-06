@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="parkingLotWeb">
+<head>
+	<meta charset="UTF-8">
+	<title>Parking Lot</title>
+
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers/homeCtrl.js"></script>
+	<script src="js/controllers/registerCtrl.js"></script>
+	<script src="js/controllers/searchCtrl.js"></script>
+	<script src="js/services/vehicles.js"></script>
+</head>
+</head>
+<body ng-controller="homeCtrl">
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Parking Lot</h1>
+		</div>
+
+		<div class="container nav-menu">
+			<nav class="navbar navbar-inverse">
+
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a ng-click="selectedTab = 10" class="navbar-brand class="active"">Pesquisar</a>
+					</div>
+
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a ng-click="selectedTab = 20">Cadastro</a></li>
+							<li><a ng-click="selectedTab = 30">Gerenciamento</a></li>
+						</ul>	
+					</div>
+				</div>
+
+			</nav>
+
+		</div>
+	</div>
+
+	<div class="col-md-8 col-md-offset-2">
+		<div ng-include="'view/search.html'" ng-show="selectedTab == 10"></div>
+		<div ng-include="'view/register.html'" ng-show="selectedTab == 20"></div>
+	</div>
+
+</body>

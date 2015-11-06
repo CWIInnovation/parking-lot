@@ -1,0 +1,58 @@
+<div ng-controller="registerCtrl" class="container-fluid">
+	<div class="col-md-8 col-md-offset-2">
+	
+		<form class="form-horizontal">
+
+		  <div class="form-group">
+		    <label for="inputNome" class="col-sm-2 control-label">Nome</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control text-uppercase" id="inputNome" ng-model="register.name" />
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="inputCarro" class="col-sm-2 control-label">Carro</label>
+		    <div class="col-sm-4">
+		      <input type="text" class="form-control text-uppercase" id="inputCarro" ng-model="register.car" />
+		    </div>
+
+		    <label for="inputCor" class="col-sm-2 control-label">Placa</label>
+		    <div class="col-sm-4">
+		      <input type="text" class="form-control text-uppercase" id="inputCor" ng-model="register.licensePlate" />
+		    </div>
+		  </div>
+
+		  <div class="form-group">
+		    <label for="inputRamal" class="col-sm-2 control-label">Ramal</label>
+		    <div class="col-sm-4">
+		      <input type="text" class="form-control" id="inputRamal" ng-model="register.phoneExtension" />
+		    </div>
+
+		    <label for="inputCelular" class="col-sm-2 control-label">Celular</label>
+		    <div class="col-sm-4">
+		      <input type="text" class="form-control" id="inputCelular" ng-model="register.cellphone" />
+		    </div>
+		  </div>
+
+		  <div class="form-group">
+		    <label for="inputProjeto" class="col-sm-2 control-label">Projeto</label>
+		    <div class="col-sm-4">
+		      <input type="text" class="form-control text-uppercase" id="inputProjeto" ng-model="register.project" />
+		    </div>
+
+		    <label for="inputAndar" class="col-sm-2 control-label">Andar</label>
+		    <div class="col-sm-4">
+		      <input type="text" class="form-control" id="inputAndar" ng-model="register.floor" />
+		    </div>
+		  </div>
+	  
+		  <div class="form-group">
+			   <div class="col-md-12 center-block">
+			      <button ng-click="save(register)" class="btn btn-primary center-block">Salvar</button>
+			   </div>  
+		  </div>
+
+		</form>
+	</div>	
+
+</div>
