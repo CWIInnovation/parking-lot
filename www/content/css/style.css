@@ -51,3 +51,9 @@
 .about-container i {
     color: red;
 }
+
+.home-message {
+     color: rgb(148, 148, 148);
+     text-align: center;
+     margin: 20px;
+}

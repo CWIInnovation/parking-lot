@@ -17,7 +17,7 @@ app.all('*', function(req, res, next) {
 app.use('/Vehicle', vehicle);
 
 app.get('/', function (req, res) {
-    res.json({routes: ['/Vehicle', '/Vehicle/{licensePlate}']});//rfdf
+    res.json({routes: ['/Vehicle', '/Vehicle/{licensePlate}']});
 });
 
 app.listen(port);

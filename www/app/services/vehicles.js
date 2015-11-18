@@ -8,7 +8,7 @@ angular.module('parking-lot').service('vehiclesService', function (databaseServi
 
             var handleResult = function (event) {
                 var cursor = event.target.result;
-                if (cursor) {
+                if (cursor && cursor.value.active) {
                     result.push({
                         ID: cursor.key,
                         licensePlate: cursor.value.licensePlate,
@@ -35,7 +35,7 @@ angular.module('parking-lot').service('vehiclesService', function (databaseServi
     this.setVehiclesDatabase = function (vehicles) {
         var deferred = $q.defer();
 
-        databaseService.get().then(function () {
+        databaseService.get().then(function () {            
             if (db === null) {
                 deferred.reject("IndexDB is not opened yet!");
             }
@@ -60,6 +60,8 @@ angular.module('parking-lot').service('vehiclesService', function (databaseServi
                 deferred.resolve();
             }
         });
+        
+        console.log("Base da dados atualizada com sucesso!");
         return deferred.promise;
     };
 
