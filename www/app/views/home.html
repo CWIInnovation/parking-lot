@@ -10,9 +10,11 @@
         </form>
 
         <div class="list padding"> 
-            <div class="home-message" ng-hide="vehicles.length > 0">
+            
+            <div class="home-message">
                 Iniciando app em modo offline...
             </div>
+            
             <a class="item" data-ui-sref="app.details({licensePlate: vehicle.licensePlate})"
                ng-repeat="vehicle in vehicles | orderBy:sortType:false | filter:vehicle">
                 <div>
@@ -24,5 +26,6 @@
                 </div>                
             </a>
         </div>
+        
     </ion-content>
 </ion-view>

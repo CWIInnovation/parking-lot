@@ -5,5 +5,4 @@ angular.module('parking-lot').controller('DetailCtrl', ["$scope","$stateParams",
             $scope.ownerInfo = vehicle;
 		});
 	});
-
 }]);

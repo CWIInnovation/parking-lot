@@ -4,35 +4,39 @@
 
             <div class="item item-avatar">
                 <img src="content/img/avatar.png">
-                <h2>{{ownerInfo.driver}}</h2>
-                <p>{{ownerInfo.licensePlate}}</p>
+                <h2>{{::ownerInfo.driver}}</h2>
+                <p>Placa: {{::ownerInfo.licensePlate}}</p>                               
             </div>
 
             <div class="item item-body">
                 <div class="item item-icon-left">
                     <i class="icon ion-model-s"></i>
-                    {{ownerInfo.vehicleType}}
+                    {{::ownerInfo.vehicleType}}
                 </div>
                 <div class="item item-icon-left">
                     <i class="icon ion-person-stalker"></i>
-                    {{ownerInfo.team}}
+                    {{::ownerInfo.team}}
                 </div>
                 <div class="item item-icon-left">
                     <i class="icon ion-ios-at"></i>
-                    name@cwi.com.br
+                    <a href="mailto:{{::ownerInfo.login}}@cwi.com.br">{{::ownerInfo.login}}@cwi.com.br</a>
                 </div>
-                <div class="item item-icon-left">
+                <div ng-if="ownerInfo.personalNumber" class="item item-icon-left">
                     <i class="icon ion-ios-telephone"></i>
-                    XXX
+                    Nº Pessoal: <a href="tel: {{::ownerInfo.personalNumber}}">{{::ownerInfo.personalNumber}}</a>
+                </div>
+                <div ng-if="ownerInfo.comercialNumber" class="item item-icon-left">
+                    <i class="icon ion-ios-telephone"></i>
+                    Ramal: {{::ownerInfo.comercialNumber}}
                 </div>
             </div>
 
-            <div class="item tabs tabs-secondary tabs-icon-left">
+            <!--<div class="item tabs tabs-secondary tabs-icon-left">
                 <a class="tab-item">
                     <i class="icon ion-speakerphone"></i>
                     Notificar
                 </a>
-            </div>
+            </div>-->
 
         </div>
     </ion-content>

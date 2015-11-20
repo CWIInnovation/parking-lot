@@ -1,13 +1,14 @@
 angular.module('parking-lot').service('vehiclesService', function (databaseService, config, $http, $q) {
+    
     this.getVehiclesDatabase = function () {
-        var deferred = $q.defer();
-
+        var deferred = $q.defer();        
         databaseService.get().then(function () {
 
             var result = [];
 
             var handleResult = function (event) {
                 var cursor = event.target.result;
+
                 if (cursor && cursor.value.active) {
                     result.push({
                         ID: cursor.key,
@@ -15,7 +16,10 @@ angular.module('parking-lot').service('vehiclesService', function (databaseServi
                         vehicleType: cursor.value.vehicleType,
                         team: cursor.value.team,
                         driver: cursor.value.driver,
-                        active: cursor.value.active
+                        active: cursor.value.active,
+                        personalNumber: cursor.value.personalNumber,
+                        comercialNumber: cursor.value.comercialNumber,
+                        login: cursor.value.login
                     });
                     cursor.continue();
                 }
@@ -32,12 +36,13 @@ angular.module('parking-lot').service('vehiclesService', function (databaseServi
         });
         return deferred.promise;
     };
+    
     this.setVehiclesDatabase = function (vehicles) {
         var deferred = $q.defer();
 
         databaseService.get().then(function () {            
             if (db === null) {
-                deferred.reject("IndexDB is not opened yet!");
+                deferred.reject("IndexDB is not open yet!");
             }
             var transaction = db.transaction(["vehicle"], "readwrite");
             var store = transaction.objectStore("vehicle");
@@ -53,7 +58,6 @@ angular.module('parking-lot').service('vehiclesService', function (databaseServi
                 };
 
                 request.onerror = function (e) {
-                    console.log(e.value);
                     deferred.reject("Todo item couldn't be added!");
                 };
             } else {
@@ -61,20 +65,16 @@ angular.module('parking-lot').service('vehiclesService', function (databaseServi
             }
         });
         
-        console.log("Base da dados atualizada com sucesso!");
         return deferred.promise;
     };
 
     this.getFromAPI = function () {
         var deferred = $q.defer();
-        console.log(config.apiUrl + 'Vehicle');
 
         $http.get(config.apiUrl + 'Vehicle')
         .success(function (data) {
-            console.log(data);
             deferred.resolve(data);
         }).error(function (msg, code) {
-            console.log(msg);
             deferred.reject(msg);
         });
         return deferred.promise;

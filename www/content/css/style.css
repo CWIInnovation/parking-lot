@@ -40,7 +40,6 @@
 .about-container p {
     padding-left: 10px;
     padding-right: 15px;
-    text-align: justify;   
 }
 
 .about-container h4 {
@@ -56,4 +55,8 @@
      color: rgb(148, 148, 148);
      text-align: center;
      margin: 20px;
+}
+
+.success-message {
+    color: #387ef5;
 }
