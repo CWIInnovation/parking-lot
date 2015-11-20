@@ -13,7 +13,6 @@ angular.module('parking-lot').factory('databaseService', function ($q) {
         openRequest.onupgradeneeded = function (e) {               
             var thisDb = e.target.result;
             var objectStore;
-            debugger;
 
             if (!thisDb.objectStoreNames.contains("vehicle")) {
                 objectStore = thisDb.createObjectStore("vehicle", { keyPath: "licensePlate", autoIncrement: false });
