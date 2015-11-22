@@ -57,6 +57,14 @@
      margin: 20px;
 }
 
+.home-message span {
+    color: #387ef5!important;
+}
+
 .success-message {
     color: #387ef5;
+}
+
+.error-message {
+    color: red;
 }

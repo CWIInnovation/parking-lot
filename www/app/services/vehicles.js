@@ -68,16 +68,28 @@ angular.module('parking-lot').service('vehiclesService', function (databaseServi
         return deferred.promise;
     };
 
-    this.getFromAPI = function () {
-        var deferred = $q.defer();
-
-        $http.get(config.apiUrl + 'Vehicle')
+  this.getFromAPI = function (successCallback, failCallback) {
+      $http.get(config.apiUrl + 'Vehicle')
         .success(function (data) {
-            deferred.resolve(data);
+            successCallback(data);
         }).error(function (msg, code) {
-            deferred.reject(msg);
+            failCallback(msg);
         });
-        return deferred.promise;
-    };
+  };
+  
+//   this.getFromAPI = function () {
+//         var deferred = $q.defer();
+//         
+//         $http.get(config.apiUrl + 'Vehicle')
+//         .success(function (data) {
+//             deferred.resolve(data);
+//         }).error(function (msg, code) {
+//             //TODO: levar para controller
+//             document.querySelector(".home-message").innerHTML = 'Não foi possível acessar a API da base de placas.';            
+//             
+//             deferred.reject(msg);
+//         });
+//         return deferred.promise;
+//     };
 
 });

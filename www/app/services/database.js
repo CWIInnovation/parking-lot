@@ -4,7 +4,7 @@ angular.module('parking-lot').factory('databaseService', function ($q) {
 
         var deferred = $q.defer();
 
-        var openRequest = window.indexedDB.open("parking_lot", 8);               
+        var openRequest = window.indexedDB.open("parking_lot", 9);               
 
         openRequest.onerror = function (e) {
             deferred.reject(e.toString());
@@ -23,7 +23,6 @@ angular.module('parking-lot').factory('databaseService', function ($q) {
                 objectStore.createIndex("comercialNumber", "comercialNumber", { unique: false });
                 objectStore.createIndex("login", "login", { unique: false });
             }
-
         };
 
         openRequest.onsuccess = function (e) {
@@ -34,7 +33,6 @@ angular.module('parking-lot').factory('databaseService', function ($q) {
 
             setUp = true;
             deferred.resolve(true);
-
         };
         return deferred.promise;
     }
