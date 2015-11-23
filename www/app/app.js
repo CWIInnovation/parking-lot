@@ -29,6 +29,7 @@ angular.module('parking-lot', ['ionic'])
                 views: {
                     'about-tab': {
                         templateUrl: "app/views/about.html",
+                        controller: 'AboutCtrl'
                     }
                 }
             })

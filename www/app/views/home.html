@@ -4,7 +4,15 @@
             <div class="list list-inset">
                 <label class="item item-input">
                     <i class="icon ion-search placeholder-icon"></i>
-                    <input type="text" placeholder="Informe a placa" ng-model-options="{ debounce: { 'default': 400 } }" ng-model="vehicle.licensePlate">
+                    <input type="text" placeholder="Informe a placa" 
+                    ng-model-options="{ debounce: { 'default': 400 } }" 
+                    ng-model="vehicle.licensePlate">
+                    
+                    <a ng-if="vehicle.licensePlate.length > 0" 
+                        on-touch="vehicle.licensePlate=''">                    
+                        <i class="icon ion-close-circled placeholder-icon" style="font-size: 23px;"></i>                    
+                    </a>
+
                 </label>
             </div>
         </form>

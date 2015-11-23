@@ -9,7 +9,7 @@ angular.module('parking-lot').controller('VehicleCtrl', function ($scope, vehicl
             $divMensagem.classList.add("success-message");
             
             setTimeout(function() { 
-                $divMensagem.style.display = 'none';
+                fadeOut($divMensagem, 400);
             }, 1000);
             
             vehiclesService.getVehiclesDatabase().then(function (vehicles) {
@@ -24,11 +24,17 @@ angular.module('parking-lot').controller('VehicleCtrl', function ($scope, vehicl
                 $divMensagem.innerHTML = $divMensagem.innerHTML + "<br><br><span>Utilizando última base de dados salva no aparelho...</span>";
                 
                 setTimeout(function() {
-                   $divMensagem.style.display = 'none'; 
-                }, 1800); 
+                   fadeOut($divMensagem, 400);
+                }, 4000); 
             }   
             
             $scope.vehicles = vehicles;     
         });
     });
+     
+    function fadeOut(el, duration) {
+        var s = el.style, step = 25/(duration || 300);
+        s.opacity = s.opacity || 1;
+        (function fade() { (s.opacity -= step) < 0 ? s.display = "none" : setTimeout(fade, 25); })();
+    }
 })
