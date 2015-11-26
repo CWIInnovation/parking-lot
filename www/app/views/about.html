@@ -6,8 +6,8 @@
                 <img src="content/img/innovation-logo.png">
 
                 <h2>Innovation Groups</h2>
-                
-                <p>CWI Software, <span ng-controller="AboutCtrl">{{ currentDate | date:'yyyy'}}</span></p>                
+
+                <p>CWI Software, <span ng-controller="AboutCtrl">{{ currentDate | date:'yyyy'}}</span></p>
             </div>
 
             <div class="item item-body about-container">
@@ -16,9 +16,15 @@
                 <p style="margin-bottom: 20px;">
                     Somos um grupo que busca adquirir e disseminar conhecimento sobre os mais diversos tipos
                     de técnologia.
-                </p>                
+                </p>
                 <p>
                     Fique atento aos próximos encontros, qualquer um pode participar! <span class="smile">:)</span>
+                </p>
+                <p ng-show="contributors.length > 0">
+                    <h3>Contribuidores:</h3>
+                    <a class="contributor" ng-click="openUrl(contributor.html_url)" ng-repeat="contributor in contributors" target="_blank">
+                        <img ng-src="{{:: contributor.avatar_url}}" alt="{{:: contributor.login}}" />
+                    </a>
                 </p>
             </div>
         </div>
