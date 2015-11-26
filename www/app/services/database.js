@@ -1,44 +1,30 @@
-angular.module('parking-lot').factory('databaseService', function ($q) {
+angular.module('parking-lot').factory('databaseService', ['$q', 'config',
+    function ($q, config) {
+        function init() {
+            var deferred = $q.defer();
 
-    function init() {
+            window.sqlitePlugin.openDatabase({name: config.databaseName}, function(db) {
+                db.transaction(function(tx) {
+                    // Verify if table exists
+                    tx.executeSql('SELECT COUNT(id) FROM vehicles', [], function (tx, res) {
+                        deferred.resolve(true);
+                    }, function () {
+                        // Create table
+                        tx.executeSql('DROP TABLE IF EXISTS vehicles');
+                        tx.executeSql('CREATE TABLE IF NOT EXISTS vehicles (id INTEGER PRIMARY KEY, licensePlate TEXT, driver TEXT, vehicleType TEXT, team TEXT, personalNumber TEXT, comercialNumber TEXT, login TEXT)');
+                        deferred.resolve(true);
+                    });
+                }, function(err) {
+                    deferred.reject(err.toString());
+                });
+            });
 
-        var deferred = $q.defer();
+            return deferred.promise;
+        }
 
-        var openRequest = window.indexedDB.open("parking_lot", 9);               
-
-        openRequest.onerror = function (e) {
-            deferred.reject(e.toString());
-        };
-
-        openRequest.onupgradeneeded = function (e) {               
-            var thisDb = e.target.result;
-            var objectStore;
-
-            if (!thisDb.objectStoreNames.contains("vehicle")) {
-                objectStore = thisDb.createObjectStore("vehicle", { keyPath: "licensePlate", autoIncrement: false });
-                objectStore.createIndex("driver", "driver", { unique: false });
-                objectStore.createIndex("vehicleType", "vehicleType", { unique: false });
-                objectStore.createIndex("team", "team", { unique: false });
-                objectStore.createIndex("personalNumber", "personalNumber", { unique: false });
-                objectStore.createIndex("comercialNumber", "comercialNumber", { unique: false });
-                objectStore.createIndex("login", "login", { unique: false });
+        return {
+            get: function () {
+                return init();
             }
         };
-
-        openRequest.onsuccess = function (e) {
-            db = e.target.result;           
-            db.onerror = function (event) {
-                deferred.reject("Database error: " + event.target.errorCode);
-            };
-
-            setUp = true;
-            deferred.resolve(true);
-        };
-        return deferred.promise;
-    }
-    return {
-        get: function () {
-            return init();
-        }
-    };
-})
+    }]);
