@@ -72,3 +72,11 @@
 a {
   color: rgb(92, 143, 252);
 }
+
+.contributor {
+  text-decoration: none;
+}
+.contributor img {
+  height: 60px;
+  width: 60px;
+}

@@ -20,6 +20,12 @@
                 <p>
                     Fique atento aos próximos encontros, qualquer um pode participar! <span class="smile">:)</span>
                 </p>
+                <p ng-show="contributors.length > 0">
+                    <h3>Contribuidores:</h3>
+                    <a class="contributor" ng-click="openUrl(contributor.html_url)" ng-repeat="contributor in contributors" target="_blank">
+                        <img ng-src="{{:: contributor.avatar_url}}" alt="{{:: contributor.login}}" />
+                    </a>
+                </p>
             </div>
         </div>
     </ion-content>
