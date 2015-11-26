@@ -26,7 +26,6 @@ angular.module('parking-lot', ['ionic'])
             })
             .state('app.about', {
                 url: "/about",
-                cache: false,
                 views: {
                     'about-tab': {
                         templateUrl: "app/views/about.html",
@@ -35,7 +34,6 @@ angular.module('parking-lot', ['ionic'])
                 }
             })
             .state('app.details', {
-                cache: false,
                 url: "/details/:licensePlate",
                 views: {
                     'home-tab': {
