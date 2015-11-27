@@ -1,13 +1,8 @@
 # cwi-parking-lot
 
-Baixar os plugins utilizados pelo ionic (ex: splash screen) e demais dependências
+Baixar os plugins utilizados pelo ionic (ex: splash screen) e demais dependências, inclusive plataformas
 ```sh
 ionic state restore
-```
-
-Adicionar plataformas desejadas
-```sh
-ionic platform add <android|ios>
 ```
 
 Gerar resources de ícone e splash screen para todas as plataformas
@@ -15,7 +10,7 @@ Gerar resources de ícone e splash screen para todas as plataformas
 ionic resources
 ```
 
-Buildar e rodar no celular ou emulador 
+Buildar e rodar no celular ou emulador
 ```sh
 ionic run <android|ios>
 ```

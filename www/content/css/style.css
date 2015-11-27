@@ -1,8 +1,8 @@
 .smile {
-    transform: rotate(-270deg);
-    display: inline-block;
-    margin-left: 10px;
-    font-weight: bolder;
+  transform: rotate(-270deg);
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: bolder;
 }
 
 .detalhes .card .item-body .item {
@@ -12,63 +12,80 @@
 }
 
 .license-plate {
-	font-family: arial;
-    background-color: silver;
-    width: 86px;
-    padding: 4px 7px 1px 7px;
-    border: 2px solid rgb(137, 135, 135);
-    font-weight: bold;
-    border-radius: 6px;
-    float: left;
-    text-align: center;
+  font-family: arial;
+  background-color: silver;
+  width: 86px;
+  padding: 4px 7px 1px 7px;
+  border: 2px solid rgb(137, 135, 135);
+  font-weight: bold;
+  border-radius: 6px;
+  float: left;
+  text-align: center;
 }
 
 .license-plate div {
-    border: 1px solid rgb(168, 168, 168);
-    width: 68px;
-    height: 8px;
-    margin-bottom: 1px;
+  border: 1px solid rgb(168, 168, 168);
+  width: 68px;
+  height: 8px;
+  margin-bottom: 1px;
 }
 
 .license-plate div span {
-    position: absolute;    
-    top: 17px;
-    left: 26px;
-    font-size: 0.4em;
+  position: absolute;
+  top: 17px;
+  left: 26px;
+  font-size: 0.4em;
 }
 
 .about-container p {
-    padding-left: 10px;
-    padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 15px;
 }
 
 .about-container h4 {
-    text-align: center;
-    margin: 30px 10px 30px 20px!important;
+  text-align: center;
+  margin-top: 30px!important;
 }
 
 .about-container i {
-    color: red;
+  color: red;
 }
 
 .home-message {
-     color: rgb(148, 148, 148);
-     text-align: center;
-     margin: 20px;
+  color: rgb(148, 148, 148);
+  text-align: center;
+  margin: 20px;
 }
 
 .home-message span {
-    color: #387ef5!important;
+  color: #387ef5!important;
 }
 
 .success-message {
-    color: #387ef5;
+  color: #387ef5;
 }
 
 .error-message {
-    color: red;
+  color: red;
 }
 
-a { 
-    color: rgb(92, 143, 252);
+a {
+  color: rgb(92, 143, 252);
+}
+
+.contributors-container {
+  text-align: center;
+}
+
+.contributor {
+  text-decoration: none;
+}
+.contributor img {
+  height: 50px;
+  width: 50px;
+}
+
+.loading-container .loading
+{
+  background: none;
 }
