@@ -11,8 +11,7 @@
             </div>
 
             <div class="item item-body about-container">
-                <img class="full-image" src="content/img/innovation-baner.png">
-                <h4>Developed with <i class="icon ion-heart"></i> by NERDs</h4>
+                <img class="full-image" src="content/img/innovation-baner.png">                
                 <p style="margin-bottom: 20px;">
                     Somos um grupo que busca adquirir e disseminar conhecimento sobre os mais diversos tipos
                     de técnologia.
@@ -21,10 +20,12 @@
                     Fique atento aos próximos encontros, qualquer um pode participar! <span class="smile">:)</span>
                 </p>
                 <p ng-show="contributors.length > 0">
-                    <h3>Contribuidores:</h3>
-                    <a class="contributor" ng-click="openUrl(contributor.html_url)" ng-repeat="contributor in contributors" target="_blank">
-                        <img ng-src="{{:: contributor.avatar_url}}" alt="{{:: contributor.login}}" />
-                    </a>
+                    <h4>Developed with <i class="icon ion-heart"></i> by:</h4>
+                    <div class="contributors-container">
+                        <a class="contributor" ng-click="openUrl(contributor.html_url)" ng-repeat="contributor in contributors" target="_blank">
+                            <img ng-src="{{:: contributor.avatar_url}}" alt="{{:: contributor.login}}" />
+                        </a>
+                    <div>
                 </p>
             </div>
         </div>

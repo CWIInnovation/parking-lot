@@ -44,7 +44,7 @@
 
 .about-container h4 {
   text-align: center;
-  margin: 30px 10px 30px 20px!important;
+  margin-top: 30px!important;
 }
 
 .about-container i {
@@ -73,10 +73,19 @@ a {
   color: rgb(92, 143, 252);
 }
 
+.contributors-container {
+  text-align: center;
+}
+
 .contributor {
   text-decoration: none;
 }
 .contributor img {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
+}
+
+.loading-container .loading
+{
+  background: none;
 }

@@ -4,20 +4,22 @@ angular.module('parking-lot').factory('vehiclesService', ['databaseService', 'co
             var deferred = $q.defer();
             databaseService.get().then(function () {
                 var result = [];
-
+                
                 window.sqlitePlugin.openDatabase({name: config.databaseName}, function(db) {
                     db.transaction(function(tx) {
                         tx.executeSql('SELECT id, licensePlate, driver, vehicleType, team, personalNumber, comercialNumber, login FROM vehicles ORDER BY licensePlate;', [], function (tx, res) {
                             var i = 0,
                             len = res.rows.length;
                             for (; i < len; i++)
-                            result.push(res.rows.item(i));
-
+                                result.push(res.rows.item(i));
                             deferred.resolve(result);
-                        }, function (err) {
-                            deferred.reject(err.toString());
+                        }, function (err) {        
+                            //Erro quando executado fora do IonicView 
+                            //sqllite_prepare_v2 failure: no such table vehicles                    
+                            deferred.reject(err.message);
                         });
                     }, function(err) {
+                        document.querySelector('.home-message').innerHTML = 'err' + err.message;
                         deferred.reject(err.toString());
                     });
                 });

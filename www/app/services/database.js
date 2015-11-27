@@ -2,7 +2,7 @@ angular.module('parking-lot').factory('databaseService', ['$q', 'config',
     function ($q, config) {
         function init() {
             var deferred = $q.defer();
-
+            
             window.sqlitePlugin.openDatabase({name: config.databaseName}, function(db) {
                 db.transaction(function(tx) {
                     // Verify if table exists
