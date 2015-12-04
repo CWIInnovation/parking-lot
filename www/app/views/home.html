@@ -23,7 +23,7 @@
                 Obtendo última base de dados, por favor aguarde...
             </div>
 
-            <a class="item" data-ui-sref="app.details({id: vehicle.id})"
+            <a class="item" data-ui-sref="app.details({licensePlate: vehicle.licensePlate})"
             ng-repeat="vehicle in vehicles | orderBy:sortType:false | filter:vehicle">
             <div>
                 <div class="license-plate"><div><span>CWI Software - RS<span></div>{{::vehicle.licensePlate }}</div>

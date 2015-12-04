@@ -27,14 +27,14 @@ angular.module('parking-lot', ['ionic'])
             }
         })
         .state('app.details', {
-            url: '/details/:id',
+            url: '/details/:licensePlate',
             views: {
                 'home-tab': {
                     templateUrl: 'app/views/details.html',
                     controller: 'DetailCtrl',
                     resolve: {
-                        vehicle: function ($stateParams, vehiclesService) {
-                            return vehiclesService.getVehicleDatabase($stateParams.id);
+                        vehicle: function ($stateParams, vehiclesService) {                            
+                            return vehiclesService.findVechicleByLicensePlate($stateParams.licensePlate);
                         }
                     }
                 }
